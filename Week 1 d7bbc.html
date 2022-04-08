@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f8b6625-3702-47d7-85fb-6485bea184f1" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">1️⃣</span></div><h1 class="page-title">Week 1</h1></header><div class="page-body"><h2 id="c02dc7a2-79ec-4c41-9682-803ff512b4b0" class="">Table of Contents</h2><nav id="7a84dc8a-56bc-4442-bb55-e57f45859660" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c02dc7a2-79ec-4c41-9682-803ff512b4b0">Table of Contents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1d8c2dfd-705a-4095-adab-333b996d63ba"><strong><span style="border-bottom:0.05em solid">Introducing Google Cloud Platform</span></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2febd810-10a8-4ca2-8faa-d466b3d8bb9d">Regions &amp; Zones in GCP</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#33edc028-a53b-4d02-8499-ac4e85250f69">Pricing</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e00cdb81-fd54-43d4-84eb-39048fe3d9c0">Security</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9f1fe4d0-7432-49a0-8ce3-180428814f5a">Budgeting in GCP</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fba49783-b8ff-40b7-8859-0e5292da366a"><span style="border-bottom:0.05em solid">The Google Cloud Platform resource hierarchy</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5f75eeb2-46ca-4eb7-a4cc-5c74f31b6527">Interacting with Google Cloud Platform</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#03845bca-2635-4f74-b2cd-beb380a99e4d">Cloud Marketplace (formerly Cloud Launcher)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#80bb7651-b617-4060-b74c-045b8e1c5236"><span style="border-bottom:0.05em solid">Virtual Private Cloud (VPC) Network</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7acb8b64-1f38-41c0-940a-c4b54145169d">Compute Engine</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f80c2285-495c-4ac7-a913-df7d5656b08f">Preemptible VMs</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e9c5d95e-0721-443b-b479-c254a854b27f">Important VPC capabilities</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#53a2fe71-310c-46bb-aed9-e30ce92ce515"><span style="border-bottom:0.05em solid">Introduction to Google Cloud Platform Storage Options</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#161e208d-1c62-4ae4-a7ab-df522d0f9af8">Cloud Storage</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#491b79a0-c4f6-4bcb-b14a-5aa8e0d99b5a">Cloud Big table</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2839c183-165c-45e5-b5a8-c29c24d0dcf6">Google Cloud SQL and Google Cloud Spanner</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b9785a02-2473-4dd3-8d07-553ad9ab9ed3">Google Cloud Datastore</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#de0f23ad-52df-4b71-bf47-867072cf08dd">Comparing Storage options</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f526ba45-bfc7-440f-bc7d-0a260c980383">Containers, Kubernetes, and Kubernetes Engine</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#886e42e1-2dbf-4bbd-8298-8c132e059776">Hybrid and Multi Cloud</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1725d162-1d33-4d0b-af4c-e538936e3c11"><span style="border-bottom:0.05em solid">Introduction to App Engine</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#67a62a10-332a-43a5-9eb1-600eb08163a7">Google App Engine Standard Environment</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4364163e-87ee-44bd-b301-5dbd1a1cdc1e">Google App Engine Flexible Environment</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fca28c96-cb42-4786-b3f5-d9a3fc95ba9e">Google Cloud Endpoints and Apigee Edge</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ac14b7ef-893f-4f14-8ed9-4b1820d1a885">Development in the cloud</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#40fd1261-e3e7-470b-bd9a-898f97088bae">Cloud Functions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c1baa77b-2bbd-4c53-972a-7f3a91c3d509">Deployment: Infrastructure as code</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#31a38b70-d325-4bf9-9cbe-96b26f06f5e4">Monitoring: Proactive instrumentation</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#50e0b81a-1517-4f4d-b7f6-ebb69c2500c2"><span style="border-bottom:0.05em solid">Introduction to Big Data and Machine Learning</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#dad295b4-98d4-452a-9f7f-76e151c10080">Google Cloud Big Data Platform</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#475c9c05-4a55-4796-aa61-7a98c0971dea">Cloud Dataproc</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e10ea5b4-f434-42d4-b903-3567d45a1cb3">Cloud Dataflow</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e49df79a-77e6-47ac-bebb-7f56571413b7">BigQuery</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3e3fe89b-f5dc-4cc9-ab22-a5c0f9377aa3">Cloud Pub/Sub and Cloud Datalab</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e416d1d-8b55-4b5e-8cb0-584b7a103a6e">Google Cloud Machine Learning Platform</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6cbe9895-ab77-4755-8fd9-5a1fa0fa017d">Machine learning API</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d47ccbe6-1afb-44a6-960f-017e71518b0f">1. Cloud Vision API</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#079c6653-9ad9-46d4-80fb-41f0bdcb4686">2. Cloud Speech API </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#21d92c59-e739-4547-83ea-fd28af6f2ff5">3. Cloud Natural Language API</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3aa988d0-b434-4f63-9356-e15e44653992">4. Cloud Translation API</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9d572498-0c8e-489e-9f12-f6d4d930c853">5. Cloud Video Intelligence API</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d59227a8-9696-4f4e-bae6-01911b5a657a"><span style="border-bottom:0.05em solid">Summary</span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9ab832b2-3fb2-4656-839e-461923cac003">Compute Options</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#576e493b-126f-45a4-821d-dc7441031ac4">Load Balancing</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#24098619-8968-4c4b-85c8-92cf7e18a484">Interconnect with google VPC</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8913a3f1-699d-4dc3-a3fe-704d4fa2ceff">Storage Options</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#59188023-cdbc-4a37-b6fb-915462ab3c64">Cloud Storage</a></div></nav><h1 id="1d8c2dfd-705a-4095-adab-333b996d63ba" class=""><strong><span style="border-bottom:0.05em solid">Introducing Google Cloud Platform</span></strong></h1><ul id="fa747a93-029e-44a7-bef1-5e53109929ec" class="bulleted-list"><li style="list-style-type:disc">GCP offers <mark class="highlight-red">Four main</mark> Kind of services:<ol type="1" id="7f5b0658-6982-46d6-8666-53c9ac0ee3b0" class="numbered-list" start="1"><li><strong>Compute</strong><ul id="00796054-6cb4-4cc8-b008-33f83f126575" class="bulleted-list"><li style="list-style-type:disc">Compute Engine</li></ul><ul id="cb3c005e-2908-4f64-b223-3834c29ebc9b" class="bulleted-list"><li style="list-style-type:disc">Kubernetes Engine</li></ul><ul id="466d05ea-3c67-4ed0-bb3c-6b343482b0e2" class="bulleted-list"><li style="list-style-type:disc">App Engine</li></ul><ul id="8ea2ba81-974d-4726-a42b-b0fadf7572e0" class="bulleted-list"><li style="list-style-type:disc">Cloud Functions</li></ul></li></ol><ol type="1" id="8ff2d8c6-a36e-4f41-8a19-c9eea0d71350" class="numbered-list" start="2"><li><strong>Storage</strong><ul id="b9e145c4-5684-4f56-b1dc-baed1ea82cef" class="bulleted-list"><li style="list-style-type:disc">Bigtable</li></ul><ul id="14f01444-129a-4b3f-8a94-d2f2f8388205" class="bulleted-list"><li style="list-style-type:disc">Cloud Storage</li></ul><ul id="1196fe85-ebba-4a85-9076-711693ee8134" class="bulleted-list"><li style="list-style-type:disc">Cloud SQL</li></ul><ul id="38d0904f-34c4-4e5c-a8c4-ea47cff6b95b" class="bulleted-list"><li style="list-style-type:disc">Cloud Spanner</li></ul><ul id="01de868f-f691-43f6-b254-d60e92c24ca2" class="bulleted-list"><li style="list-style-type:disc">Cloud Datastore</li></ul></li></ol><ol type="1" id="1eb72d8e-3f68-43ca-b2fa-8fa9e086fd24" class="numbered-list" start="3"><li><strong>Big Data</strong><ul id="f5a6f92a-e8a6-4a7d-b3c1-833a0b2aa508" class="bulleted-list"><li style="list-style-type:disc">Big Query</li></ul><ul id="7e695344-fa84-4b15-920c-59304b2e24b7" class="bulleted-list"><li style="list-style-type:disc">Pub/Sub </li></ul><ul id="d0edff79-c7ff-4a6a-aa5b-2a56b84f037a" class="bulleted-list"><li style="list-style-type:disc">Data flow</li></ul><ul id="17affa0a-0d1e-41a2-a220-ec58f0e2625f" class="bulleted-list"><li style="list-style-type:disc">Data Proc</li></ul><ul id="7ef5ae2b-ecaa-4b22-8e63-7c9ce4a761b7" class="bulleted-list"><li style="list-style-type:disc">Data Lab</li></ul></li></ol><ol type="1" id="017618e5-60aa-4fc4-9a73-481594dfce5d" class="numbered-list" start="4"><li><strong>Machine Learning</strong><ul id="afe897c2-db00-47c1-825d-43becaefd5cc" class="bulleted-list"><li style="list-style-type:disc">Natural Language API</li></ul><ul id="864eca63-a7dc-479e-93bf-789587c9f9bd" class="bulleted-list"><li style="list-style-type:disc">Vision API</li></ul><ul id="a87ffca8-e36b-46be-8870-cbe2dac881fc" class="bulleted-list"><li style="list-style-type:disc">Machine Learning </li></ul><ul id="74eceaf1-bc7f-41d1-b828-8a04a203673d" class="bulleted-list"><li style="list-style-type:disc">Speech API</li></ul><ul id="86b25bc1-6a45-427c-870a-6ac745d2d23b" class="bulleted-list"><li style="list-style-type:disc">Translate API</li></ul></li></ol></li></ul><figure id="d7bbc8d3-a9c4-473a-a013-0734924fef9a" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-15_185244.png"><img style="width:1570px" src="Week%201%20d7bbc/Screenshot_2021-07-15_185244.png"/></a><figcaption>The Definition of Cloud by US National Institute of Standards and Technology</figcaption></figure><p id="2b629ab3-5f9b-4502-b088-88c64544eb17" class="">
+</p><ul id="06686aa0-af16-4d7e-83bc-9ebb7f9b4266" class="bulleted-list"><li style="list-style-type:disc"><strong>GCP Computing Architectures</strong><figure id="81d0a22f-5995-41c8-8eca-f227afe9254a" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-15_185859.png"><img style="width:1697px" src="Week%201%20d7bbc/Screenshot_2021-07-15_185859.png"/></a></figure></li></ul><h3 id="2febd810-10a8-4ca2-8faa-d466b3d8bb9d" class="">Regions &amp; Zones in GCP</h3><ul id="be17b5c1-a653-4d40-b70b-c21601419681" class="bulleted-list"><li style="list-style-type:disc"><strong>Google&#x27;s Edge</strong>-<strong>caching</strong> network sites content close to end users to minimize latency.</li></ul><ul id="2bf29786-dd73-40d0-a43e-29786662b446" class="bulleted-list"><li style="list-style-type:disc">GCP regions and zones<figure id="15fb6f6c-dd4c-41d2-952b-ebce6568c116" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-15_190329.png"><img style="width:743px" src="Week%201%20d7bbc/Screenshot_2021-07-15_190329.png"/></a></figure><p id="21fad6a2-f1dd-4ab7-a0d5-dbf4aec8d4ca" class=""><strong>Zone doesn&#x27;t always correspond to a single physical building</strong>. All the zones within a region have fast network connectivity among them.</p></li></ul><h3 id="33edc028-a53b-4d02-8499-ac4e85250f69" class="">Pricing</h3><ul id="966e5bab-773a-4099-8297-dead328e8b8b" class="bulleted-list"><li style="list-style-type:disc"> Google Customer-friendly pricing<figure id="422eef62-ed71-49be-9286-ab4dd37a8c2f" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-15_191209.png"><img style="width:820px" src="Week%201%20d7bbc/Screenshot_2021-07-15_191209.png"/></a></figure></li></ul><h3 id="e00cdb81-fd54-43d4-84eb-39048fe3d9c0" class="">Security</h3><ul id="0d321262-ad6f-4138-8120-a6330055415a" class="bulleted-list"><li style="list-style-type:disc">Google services that want to make themselves available on the Internet register themselves with an infrastructure service called the <strong><mark class="highlight-red">Google Front End</mark></strong><strong>,</strong> which <strong>checks incoming network connections</strong> for correct certificates and best practices. The GFE also additionally, applies protections against denial of service attacks.</li></ul><ul id="e3a38e27-cea9-4098-9a26-2956fb32bf9b" class="bulleted-list"><li style="list-style-type:disc">Google designs custom chips, including a hardware <strong>security chip</strong> called <mark class="highlight-red"><strong>Titan</strong></mark> that&#x27;s currently being deployed on both servers and peripherals.</li></ul><h3 id="9f1fe4d0-7432-49a0-8ce3-180428814f5a" class="">Budgeting in GCP</h3><ul id="471befcd-758a-44af-904d-584da58a15c5" class="bulleted-list"><li style="list-style-type:disc">Four Tools for Budgeting Cost in GCP
+1. Budgets and Alerts
+2. Billing Export 
+3. Reports and quotas</li></ul><ol type="1" id="8a75464f-d2e3-4c67-b7bf-4393d127b52b" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid"><strong>Budgets and Alerts:</strong></span><strong>  </strong>You can define budgets either per billing account or per GCP project. A budget can be a fixed limit or you can tie it to another metric. To be notified when costs approach your budget limit, create an alert.</li></ol><ol type="1" id="80a8883d-bfb7-451b-9165-abe548e4d7c7" class="numbered-list" start="2"><li><strong><span style="border-bottom:0.05em solid">Billing Export:</span></strong> Billing export lets you store detailed billing information in places where it&#x27;s easy to retrieve for more detailed analysis, such as a Big Query dataset or a Cloud storage bucket.</li></ol><ol type="1" id="99ff963b-7ca7-4104-8393-ed24e5f52a43" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid"><strong>Reports and Quotas:</strong></span>  Reports is a visual tool in the GCP console that allows you to monitor your expenditure. GCP also implements quotas, Quotas are designed to prevent the over-consumption of resources, whether because of error or malicious attack. There are two types of quotas: <mark class="highlight-red"><strong>rate quotas</strong></mark> and <mark class="highlight-red"><strong>allocation quotas</strong></mark>. Both get applied at the level of the GCP project. <ol type="a" id="902e12de-23f0-4192-becb-fb6ab7ea797d" class="numbered-list" start="1"><li><strong>Rate Quotas</strong>:  Rate quotas reset after a specific time. For example, by default, the Kubernetes Engine service sets a quota of a 1000 calls to its API from each GCP project every 100 seconds. After that 100 seconds, the limit is reset.</li></ol><ol type="a" id="070e9cf6-6073-400c-8db1-31601cbd42db" class="numbered-list" start="2"><li><strong>Allocation Quotas</strong>: Allocation quotas, on the other hand, govern the number of resources you can have in your projects. For example, by default, each GCP project has a quota allowing it no more than five Virtual Private Cloud networks.</li></ol><p id="8021beb7-be4f-4f3c-b326-338b557f062e" class="">Although projects all start with the same quotas, you can change some of them by requesting an increase from Google Cloud support.</p></li></ol><p id="3b9e02c7-27cd-4cd3-bf6e-b5573d36e806" class="">
+</p><hr id="f34caac3-dae9-4012-819b-33ea29822059"/><h1 id="fba49783-b8ff-40b7-8859-0e5292da366a" class=""><span style="border-bottom:0.05em solid">The Google Cloud Platform resource hierarchy</span></h1><p id="a1e3ffb9-624e-4556-9d22-c758a4539077" class="">
+</p><figure id="8a0d7eb5-af33-4bef-abf1-d17e43677e65" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_215128.png"><img style="width:528px" src="Week%201%20d7bbc/Screenshot_2021-07-25_215128.png"/></a></figure><p id="cf17dadc-cf55-4f84-90cc-53f14b945d01" class="">
+</p><ul id="f39cda9b-b405-4bea-bd0b-33648b8c57bd" class="bulleted-list"><li style="list-style-type:disc">All Resources like Virtual Machine, App Engine or anything else in GC are organized into projects. </li></ul><ul id="f7444868-6dad-4483-ac50-414bd903d482" class="bulleted-list"><li style="list-style-type:disc">Some GCP resources like cloud storage buckets  let you put polices on individual resources too.</li></ul><ul id="10e22d14-bb1a-4c19-8c17-d6350897ef20" class="bulleted-list"><li style="list-style-type:disc">Policies are inherited downwards in the Hierarchy. All Platform resources belong to projects</li></ul><figure id="3297cbd2-9962-4805-b780-ec5a677bec8d" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_215557.png"><img style="width:624px" src="Week%201%20d7bbc/Screenshot_2021-07-25_215557.png"/></a></figure><ul id="173d264b-ca57-4be7-928d-e579eba994c2" class="bulleted-list"><li style="list-style-type:disc"> We can organize projects into folders. Folders let teams have the ability to delegate administrative rights, so they can work independently. The resources in a folder inherit IAM policies from the folder<figure id="833bae3f-2d46-49b8-8ed4-eed732227208" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_215915.png"><img style="width:352px" src="Week%201%20d7bbc/Screenshot_2021-07-25_215915.png"/></a></figure><p id="1d53560f-53b8-4e8f-a975-6c9420ee105e" class="">
+</p><ul id="03ef856b-783d-4a73-8b4a-50c3e7c71719" class="bulleted-list"><li style="list-style-type:circle">The <strong>organization node is the root node</strong> for Google Cloud resources. To use folders, you need an organization node at the top of the hierarchy. Although creating an organization node is not mandatory. <figure id="b8f03858-cdfb-4091-89d2-0476aedbd690" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_220650.png"><img style="width:480px" src="Week%201%20d7bbc/Screenshot_2021-07-25_220650.png"/></a></figure></li></ul><ul id="5958e4ce-510f-4a70-8ebc-4daf68073ced" class="bulleted-list"><li style="list-style-type:circle">An example IAM resource hierarchy
+</li></ul><figure id="08cf01a0-2cf5-4ebd-8ca5-ce48b221575f" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_220907.png"><img style="width:1565px" src="Week%201%20d7bbc/Screenshot_2021-07-25_220907.png"/></a></figure><ul id="9866bff7-4af8-4fa6-8b23-94647e6d523d" class="bulleted-list"><li style="list-style-type:circle"><strong>Policies implemented at a higher level in the hierarchy can’t take away access that’s granted at lower level.</strong> For example, suppose that a policy applied on a project gives user Jane the right to modify a Cloud Storage bucket. But a policy at the organization level says that she can only view Cloud Storage buckets, not change them. <mark class="highlight-red"><strong>The more generous policy is the one that takes effect.</strong></mark> Jane can modify the bucket.</li></ul><h2 id="23537d13-f402-46cc-97cf-ac5bd4c082ad" class="">Identity and Access Management (IAM)</h2><ul id="9752d470-ccfb-4a13-b6fd-2e46c6ca30b1" class="bulleted-list"><li style="list-style-type:circle">IAM lets administrators authorize who can take action on specific resources. An IAM policy has a &quot;who&quot; part, a &quot;can do what&quot; part, and an &quot;on which resource&quot; part.
+</li></ul><figure id="8bb80bf3-ae86-4bf7-a946-2546986d6ce1" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_221513.png"><img style="width:480px" src="Week%201%20d7bbc/Screenshot_2021-07-25_221513.png"/></a></figure><ul id="881ab791-d357-4953-aaa8-742057c23cf8" class="bulleted-list"><li style="list-style-type:circle">There are Three types of IAM roles.</li></ul><figure id="ebc5e5a5-2645-45e2-ac37-1686fb6e5341" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_221709.png"><img style="width:432px" src="Week%201%20d7bbc/Screenshot_2021-07-25_221709.png"/></a></figure><p id="72a84e15-4671-407e-9265-47d239b62bb5" class="">1. <strong>Primitive roles</strong> : You apply them to a GCP project and they affect all resources in that project. These are the owner, editor, and viewer roles. These are fixed, coarse-grained levels of access</p><figure id="54788e3e-a9d0-4c6a-ac6f-7d61e9df8b97" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_221955.png"><img style="width:480px" src="Week%201%20d7bbc/Screenshot_2021-07-25_221955.png"/></a></figure><p id="dc3ad4ad-135d-4985-9eec-3f8826f75a52" class="">A Project can have multiple owners, editors, viewers and billing administrators.</p><p id="a4312d58-c9ca-4172-b0f3-30aa543bf044" class="">2. <strong>Predefined roles : </strong>Predefined roles provide granular access for a specific service and are managed by Google Cloud. Predefined roles are meant to support common use cases and access control patterns.
+3. <strong>Custom roles : </strong>Custom roles provide granular access according to a user-specified list of permissions. Custom roles can be only used at the project or organization levels. They can&#x27;t be used at the folder levels.</p></li></ul><p id="30fb6a9b-350f-4fc8-93ad-db62cfff3021" class="">
+</p><ul id="ca33b8ef-593d-4d41-8aac-34f3819720ee" class="bulleted-list"><li style="list-style-type:disc"><strong>Service Account: </strong>Service account controls server-to-server interactions.<ol type="1" id="e747da5d-4954-4330-b445-923219ce0a28" class="numbered-list" start="1"><li>Provide an identity for carrying out <strong>server-to-server</strong> interactions in a project.</li></ol><ol type="1" id="6d7eec81-8393-47b2-9740-2f2341c43a58" class="numbered-list" start="2"><li>Used to <strong>authenticate</strong> from one service to another.</li></ol><ol type="1" id="5cd71e3f-f482-44fb-b42c-4add8adbb2a0" class="numbered-list" start="3"><li>Used to <strong>control privileges</strong> used by resources.</li></ol><ol type="1" id="9e3127e2-2f3e-4a46-8531-ed4b5210c3ea" class="numbered-list" start="4"><li>Identified with an email address:
+<mark class="highlight-red"><strong>PROJECT_NUMBER</strong></mark>-compute@developer.gserviceaccount.com
+<mark class="highlight-red"><strong>PROJECT_ID</strong></mark>@appspot.gserviceaccount.com</li></ol><ol type="1" id="9b8aab10-6fd1-4b4c-9f24-a10b2c031a3c" class="numbered-list" start="5"><li>A service account is also a <strong>resource</strong>. So it <strong>can have IAM policies </strong>on its own attached to it.</li></ol></li></ul><h2 id="5f75eeb2-46ca-4eb7-a4cc-5c74f31b6527" class="">Interacting with Google Cloud Platform</h2><ul id="d5880e9e-13a8-4430-8ee3-e9374f4e8e6e" class="bulleted-list"><li style="list-style-type:disc">There are four ways to interact with GCP<ol type="1" id="9f4b9f98-f75c-40f3-b460-7a797f03a75a" class="numbered-list" start="1"><li>Google platform Console (Web user interface) <figure id="1d4988ac-b95b-4e95-b586-e0bc18d16df9" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_225053.png"><img style="width:67px" src="Week%201%20d7bbc/Screenshot_2021-07-25_225053.png"/></a></figure></li></ol><ol type="1" id="94100132-49cb-4212-ba06-50e92b134251" class="numbered-list" start="2"><li>Cloud Shell and Cloud SDK (Command-line interface)<figure id="5f06aca9-e1f0-487e-b78c-c86f18be1617" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_225224.png"><img style="width:71px" src="Week%201%20d7bbc/Screenshot_2021-07-25_225224.png"/></a></figure></li></ol><ol type="1" id="f41fabbd-9c3d-452c-9535-6eaf1365c2cc" class="numbered-list" start="3"><li>Cloud Console Mobile App (For iOS and Android)<figure id="864f81d9-5ad3-4b65-ae5f-4354e785eff0" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_225333.png"><img style="width:47px" src="Week%201%20d7bbc/Screenshot_2021-07-25_225333.png"/></a></figure></li></ol><ol type="1" id="377d389f-8e17-4bbf-a28f-8495ee379299" class="numbered-list" start="4"><li>REST-based API (For custom applications)<figure id="f77894a6-c4ab-4137-8d5e-76f0b93999e7" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_225419.png"><img style="width:56px" src="Week%201%20d7bbc/Screenshot_2021-07-25_225419.png"/></a></figure></li></ol></li></ul><ul id="1634343f-727d-46a2-a79f-db592ced2368" class="bulleted-list"><li style="list-style-type:disc">Google Cloud <strong>Software Development Kit</strong> (SDK)<ul id="afa99a15-7dd9-4c7e-8fc7-82c2a6436497" class="bulleted-list"><li style="list-style-type:circle">Includes command-line tools for Cloud Platform products and services. Ex: gcloud , gsutil (Cloud Storage) , bq (BigQuery).<figure id="25fb024d-93b8-49d7-b19e-a1f1eef360c6" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-25_225753.png"><img style="width:202px" src="Week%201%20d7bbc/Screenshot_2021-07-25_225753.png"/></a></figure></li></ul></li></ul><h2 id="03845bca-2635-4f74-b2cd-beb380a99e4d" class="">Cloud Marketplace (formerly Cloud Launcher)</h2><ul id="073b542f-a512-4d32-93df-1ad826741247" class="bulleted-list"><li style="list-style-type:disc">A Solution marketplace containing pre-packaged, ready-to-deploy solutions.</li></ul><ul id="7ca436f1-e488-4dec-aa26-db98f802e807" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s a tool for quickly deploying functional software packages on Google Cloud Platform. There&#x27;s no need to manually configure the software, virtual machine instances, storage or network settings. Although, you can modify many of them before you launch if you like.</li></ul><p id="6870765d-bd03-41db-8145-9fd922c2ff64" class="">
+</p><hr id="27df2235-a2a8-4560-8724-d22e36ebfe8b"/><h1 id="80bb7651-b617-4060-b74c-045b8e1c5236" class=""><span style="border-bottom:0.05em solid">Virtual Private Cloud (VPC) Network</span></h1><ul id="d7358ba3-ceed-423e-83b5-3f6ab9391450" class="bulleted-list"><li style="list-style-type:disc">VPC can automatically set up your virtual topology, configuring prefix ranges for your subnets and network policies, or you can configure your own. You can also expand CIDR ranges without downtime.</li></ul><ul id="fad963d6-a635-4f35-9b90-64dd930e0e0e" class="bulleted-list"><li style="list-style-type:disc">Google Cloud VPC networks are global; subnets are regional.<figure id="b50b6f0c-733d-4258-8160-3e166349b1f5" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_193854.png"><img style="width:528px" src="Week%201%20d7bbc/Screenshot_2021-07-26_193854.png"/></a></figure></li></ul><p id="192080e2-9757-46f4-a861-deeea0ba781c" class="">
+</p><ul id="2e9c8eb2-8992-4736-b8a9-b784445d918b" class="bulleted-list"><li style="list-style-type:disc">You can dynamically increase the size of a subnet in a custom network by expanding the range of IP addresses allocated to it. Doing that doesn’t affect already configured VMs.</li></ul><p id="c21b3112-5d7d-4417-bff9-be7e0c8caeec" class="">
+</p><h2 id="7acb8b64-1f38-41c0-940a-c4b54145169d" class="">Compute Engine</h2><ul id="c4ad5ab6-ed87-4306-b4ba-f6b7ab370695" class="bulleted-list"><li style="list-style-type:disc">Compute Engine lets you create and run virtual machines on Google infrastructure. There are no <mark class="highlight-red">upfront</mark> investments.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="40cdc501-0cf7-401b-a0ac-89033457f765"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Upfront means Advance payment</div></figure></li></ul><ul id="0f802219-534a-476c-818d-0f1311c4eba1" class="bulleted-list"><li style="list-style-type:disc">There are two kinds to disk in a Computer Engine<ol type="1" id="c7ef1139-7cfd-4952-8ddd-73e9e224d9f4" class="numbered-list" start="1"><li>Local SSD : The Data stored in this disk is lost when the VM Terminates. You can pick local SSD if you need <mark class="highlight-red">scratch space</mark>.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="112c9565-1a21-471b-a9d2-c47e120c97e2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Scratch space is space on the hard disk drive that is dedicated for storage of temporary user data.</div></figure></li></ol><ol type="1" id="cf1129fb-44b2-4806-8564-d63e9f8ac7ca" class="numbered-list" start="2"><li>Persistence Disk: The Data is stored even after the termination of VM. There are two types of persistence disk.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5c3476f0-983b-4938-ac05-2ec093f1fb73"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Persistence is the ability to stick with something.</div></figure><ul id="e342df1c-3192-4813-b72b-975ff110b532" class="bulleted-list"><li style="list-style-type:disc">Standard</li></ul><ul id="6637327d-c5a0-4806-bd42-48c73881087e" class="bulleted-list"><li style="list-style-type:disc">SSD</li></ul></li></ol></li></ul><ul id="7730f028-ce26-46b3-88f2-c6157c5bbaa3" class="bulleted-list"><li style="list-style-type:disc">We can define a startup script to install some software during the first boot and take disk snapshots as backups or migration tool.</li></ul><h3 id="f80c2285-495c-4ac7-a913-df7d5656b08f" class="">Preemptible VMs</h3><ul id="876f1722-5347-44ce-b77e-276129ebf277" class="bulleted-list"><li style="list-style-type:disc"><strong>Preemptible VM</strong>s are highly affordable, short-lived compute instances suitable for batch jobs and fault-tolerant workloads. Preemptible VMs offer the same machine types and options as regular compute instances and last for up to 24 hours.</li></ul><ul id="11b54e25-b5a4-41ca-81de-920863b1553a" class="bulleted-list"><li style="list-style-type:disc">Compute Engine might stop (preempt) these instances if it requires access to those resources for other tasks. Preemptible instances are excess Compute Engine capacity, so their availability varies with usage.</li></ul><p id="d62c5f4e-2c08-444c-a1d9-aa62c1b5937a" class="">
+</p><ul id="4c62d3af-6a00-47df-9b45-b4865c5577a5" class="bulleted-list"><li style="list-style-type:disc"><strong>Scaling out</strong> is adding more equivalently functional components in parallel to spread out a load. This would be going from two load-balanced web server instances to three instances. </li></ul><ul id="0d195fbc-fb4f-47f4-aa58-8c591db927f4" class="bulleted-list"><li style="list-style-type:disc"><strong>Scaling up</strong>, in contrast, is making a component larger or faster to handle a greater load.</li></ul><p id="6c6452a6-d7da-4566-b8a8-b3c8c6efa13f" class="">
+</p><h2 id="e9c5d95e-0721-443b-b479-c254a854b27f" class="">Important VPC capabilities</h2><ul id="5400ad15-bfee-4131-a0cd-9c6dde19e94b" class="bulleted-list"><li style="list-style-type:disc">VPCs have <strong>routing tables</strong>. These are used to forward traffic from one instance to another instance within the same network. Even across sub-networks and even between GCP zones without requiring an external IP address. VPCs routing tables are built in, you don&#x27;t have to provision or manage a router.</li></ul><ul id="3c02a3f0-3f03-43db-8e93-e51befebfaed" class="bulleted-list"><li style="list-style-type:disc">VPCs give you a <strong>global distributed firewall</strong>. You can control to restrict access to instances, both incoming and outgoing traffic. You can define firewall rules in terms of metadata tags on Compute Engine instances, which is really convenient.</li></ul><ul id="d9bc20e6-2ffb-4c22-8e54-3e5e628e7733" class="bulleted-list"><li style="list-style-type:disc">If you want to establish a peering relation between two VPCs so that they can exchange traffic, you can use <strong>VPC peering</strong>. If you want to use the full power of IAM to control who and what in one project can interact with a VPC in another, you can use <strong>Shared VPC.</strong></li></ul><ul id="3cfa5b79-4c75-4399-bd68-495a47e9da7b" class="bulleted-list"><li style="list-style-type:disc"><strong>Cloud Load Balancing</strong> is a fully distributed, software-defined managed service for all your traffic. And because the load balancers don&#x27;t run in VMs you have to manage, you don&#x27;t have to worry about scaling or managing them. You can put Cloud Load Balancing in front of all your traffic - HTTP and HTTPS, other TCP and SSL traffic, and UDP traffic too.</li></ul><ul id="ae7d203b-3764-4a79-97a5-13841ada0126" class="bulleted-list"><li style="list-style-type:disc">GCP offers <strong>Cloud DNS</strong> to help the world find them. It&#x27;s a managed DNS service running on the same infrastructure as Google. It has low latency and high availability and it&#x27;s a cost-effective way to make your applications and services available to your users. The DNS information you publish is served from redundant locations around the world. Cloud DNS is also programmable. You can publish and manage millions of DNS zones and records using the GCP console, the command line interface or the API.</li></ul><ul id="66acca59-3706-4e6f-8e3f-af085588644c" class="bulleted-list"><li style="list-style-type:disc">Google has a global system of edge caches. You can use this system to accelerate content delivery in your application using <strong>Google Cloud CDN (Content Delivery Network)</strong>. Your customers will experience lower network latency. The origins of your content will experience reduced load and you can save money too. Once you&#x27;ve set up HTTPS load balancing, simply enable Cloud CDN with a single checkbox.</li></ul><ul id="9f17ebf1-4f63-473a-a0ae-8740581dcabd" class="bulleted-list"><li style="list-style-type:disc">Google Cloud platform many interconnect options<figure id="0010c215-add6-47da-9ebb-29ed7dd5f490" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_203545.png"><img style="width:480px" src="Week%201%20d7bbc/Screenshot_2021-07-26_203545.png"/></a></figure></li></ul><p id="086f1a72-1ccb-44ac-9cf0-0929bf9bb131" class="">
+</p><hr id="d8dbe9cf-e631-4fc3-a14a-b5a5db0972ca"/><h1 id="53a2fe71-310c-46bb-aed9-e30ce92ce515" class=""><span style="border-bottom:0.05em solid">Introduction to Google Cloud Platform Storage Options</span></h1><p id="93f702c4-5a4e-48da-9053-eab509a7f51c" class="">
+</p><h2 id="161e208d-1c62-4ae4-a7ab-df522d0f9af8" class="">Cloud Storage</h2><ul id="1b184f8a-fe59-41a3-b6a6-628c2e394ef5" class="bulleted-list"><li style="list-style-type:disc">Cloud Storage is binary large-object storage</li></ul><ul id="9043ce2a-9b77-4f93-8521-fdd821648d1b" class="bulleted-list"><li style="list-style-type:disc">Cloud storage is not a file storage systems instead it stores a object and gives it a unique URL to access it.</li></ul><ul id="d866977f-3d6d-47d2-9959-31f02199066d" class="bulleted-list"><li style="list-style-type:disc">Cloud storage is immutable, that means we cannot edit the objects instead we can create new versions of it.</li></ul><ul id="9aac82b6-545d-4baf-93da-b3768712cea6" class="bulleted-list"><li style="list-style-type:disc">Cloud storage always encrypts the data on server side before it is written in disk.</li></ul><ul id="c0ecc7f6-a8b4-4767-b6f8-525cfecc8b9c" class="bulleted-list"><li style="list-style-type:disc">Cloud Storage files are organized into buckets. When you create a bucket, you give it a globally unique name. You specify a geographic location where the bucket and its contents are stored and you choose a default storage class.</li></ul><ul id="5b3fca73-9a51-4ad9-88c6-1891ff3f88f1" class="bulleted-list"><li style="list-style-type:disc">Types of Cloud Storage classes<figure id="b55d75aa-01da-4033-9623-d6ba13e88a3b" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_212056.png"><img style="width:576px" src="Week%201%20d7bbc/Screenshot_2021-07-26_212056.png"/></a></figure><p id="c513cc18-d66d-425c-9698-25ac3ed78a0b" class="">
+</p></li></ul><ul id="841134be-8a83-4e5e-a972-7b434f770431" class="bulleted-list"><li style="list-style-type:disc"><strong>gsutil</strong> is the command to bring data into Google Cloud Storage using the command line.<figure id="9b51601f-da72-480a-bd93-aaf2af859f01" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_212642.png"><img style="width:528px" src="Week%201%20d7bbc/Screenshot_2021-07-26_212642.png"/></a></figure></li></ul><p id="bc179fe2-3297-486e-9887-285aefce1a60" class="">
+</p><ul id="048c0340-70c8-425a-b73a-767ad1fc6343" class="bulleted-list"><li style="list-style-type:disc">Cloud storage is often the ingestion point for data being moved into the cloud and is frequently the long-term storage location for data.</li></ul><figure id="1cc5d30d-cb94-4dab-9081-35f4d0d7aab6" class="image"><a href="Week%201%20d7bbc/Untitled.png"><img style="width:1050px" src="Week%201%20d7bbc/Untitled.png"/></a></figure><figure id="3330dd11-e02d-47c2-8495-49374252408d" class="image"><a href="Week%201%20d7bbc/Untitled%201.png"><img style="width:1048px" src="Week%201%20d7bbc/Untitled%201.png"/></a></figure><figure id="ce45e863-6eae-4e77-a6b0-5b8300ad60da" class="image"><a href="Week%201%20d7bbc/Untitled%202.png"><img style="width:1032px" src="Week%201%20d7bbc/Untitled%202.png"/></a></figure><h2 id="491b79a0-c4f6-4bcb-b14a-5aa8e0d99b5a" class="">Cloud Big table</h2><ul id="afc8c644-658e-4e8f-acbb-085ff08fe2b4" class="bulleted-list"><li style="list-style-type:disc">Cloud Bigtable is Google&#x27;s <strong>NoSQL</strong>, big data database service. Your databases in Bigtable are sparsely populated tables that can scale to billions of rows and thousands of columns allowing you to store petabytes of data.</li></ul><ul id="3b9974ea-b62e-4643-a32f-b8f1fce898d7" class="bulleted-list"><li style="list-style-type:disc">Bigtable is actually the same database that powers many of Google&#x27;s core services including search, analytics, maps and Gmail.</li></ul><h2 id="2839c183-165c-45e5-b5a8-c29c24d0dcf6" class="">Google Cloud SQL and Google Cloud Spanner</h2><ul id="786099aa-66b3-4582-a4b3-7bf39b41808c" class="bulleted-list"><li style="list-style-type:disc">Cloud SQL offers both MySQL and PostgreSQL databases that are capable of handling terabytes of storage. </li></ul><ul id="a9be3d39-aae0-4edf-867b-3fbfde757294" class="bulleted-list"><li style="list-style-type:disc">A relational database with SQL queries and horizontal scalability</li></ul><ul id="92b65185-ed7f-45f8-820b-86fd3c5299e8" class="bulleted-list"><li style="list-style-type:disc">Cloud SQL database is configured at creation time for either MySQL or PostgreSQL. Cloud Spanner uses ANSI SQL 2011 with extensions.</li></ul><ul id="7ee335f2-7018-411f-ad22-6c77c88e03e5" class="bulleted-list"><li style="list-style-type:disc">Some benefits of using the Cloud SQL managed service instead. <ul id="063481e3-0f73-46fd-92c3-1fa8f5495e6f" class="bulleted-list"><li style="list-style-type:circle">First, Cloud SQL provides several replica services like read, failover, and external replicas.</li></ul><ul id="63a29f35-420b-4b71-8d10-eb6b00497bc3" class="bulleted-list"><li style="list-style-type:circle">They are accessible by other GCP services and even external services. You can authorize Compute Engine instances for access Cloud SQL instances and configure the Cloud SQL instance to be in the same zone as your virtual machine.<figure id="0669bb09-9ce6-4d95-9f40-99b2ed0a889b" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_222034.png"><img style="width:480px" src="Week%201%20d7bbc/Screenshot_2021-07-26_222034.png"/></a></figure></li></ul></li></ul><p id="e03687cb-b254-4729-8fce-ca9efcafbae2" class="">
+</p><ul id="52c8ae3b-9a57-4baa-9a63-4f3d1225cc15" class="bulleted-list"><li style="list-style-type:disc">If Cloud SQL does not fit your requirements because you need horizontal scalability, consider using <strong>Cloud Spanner</strong>. It offers transactional consistency at a global scale, schemas, SQL, and automatic synchronous replication for high availability. And, it can provide petabytes of capacity. Consider using Cloud Spanner if you have outgrown any relational database, or sharding your databases for throughput high performance, need transactional consistency, global data and strong consistency, or just want to consolidate your database.</li></ul><ul id="67b5e444-1bf1-445e-914d-04661fe1a990" class="bulleted-list"><li style="list-style-type:disc">Cloud Spanner can <strong>scale to petabyte database sizes</strong>, while Cloud SQL is limited by the size of the database instances you choose. At the time this quiz was created, the maximum was 10,230 GB.</li></ul><h2 id="b9785a02-2473-4dd3-8d07-553ad9ab9ed3" class="">Google Cloud Datastore</h2><ul id="416360de-51ce-4828-8ed0-c78b139181de" class="bulleted-list"><li style="list-style-type:disc">Cloud Datastore is a NoSQL and highly scalable database mainly used to store structured from App Engine apps. It is a fully managed service.</li></ul><ul id="268a7c36-ae7c-4fb3-8a6a-5762a92d52b2" class="bulleted-list"><li style="list-style-type:disc">Structured objects, with lookups based on a single key</li></ul><ul id="b460e824-b72b-429f-96d8-c712caf23f64" class="bulleted-list"><li style="list-style-type:disc">Cloud Datastore automatically handles sharding and replication, providing you with a highly available and durable database that scales automatically to handle load.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3cf1fd99-6d56-40e2-9e1f-ce5587bdd967"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Sharding means dividing a larger part into smaller parts.</div></figure></li></ul><ul id="7c435dbc-fa43-4823-b4c1-49dacb25c46d" class="bulleted-list"><li style="list-style-type:disc">Cloud Datastore has a free daily quota that provides storage, reads, writes, deletes and small operations at no charge.</li></ul><h2 id="de0f23ad-52df-4b71-bf47-867072cf08dd" class="">Comparing Storage options</h2><figure id="02c98c68-bcaf-4ffc-8625-575a19e7671d" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-26_223405.png"><img style="width:827px" src="Week%201%20d7bbc/Screenshot_2021-07-26_223405.png"/></a></figure><p id="df9b956e-34f7-45fd-b654-0806c3e18535" class="">
+</p><h2 id="f526ba45-bfc7-440f-bc7d-0a260c980383" class="">Containers, Kubernetes, and Kubernetes Engine</h2><ul id="d26db854-9f8e-463d-b1e5-c1eb6940a490" class="bulleted-list"><li style="list-style-type:disc">Containers are services which don&#x27;t need us to install OS every time we deploy a code like VMs which makes the VMs bulky, instead containers virtualize the software and deploy small process in the host OS.</li></ul><ul id="a0a72e75-dc9f-4030-9218-d3b5cbd0c74c" class="bulleted-list"><li style="list-style-type:disc">This environment scales like PAAS and gives us the same flexibility as IAAS.</li></ul><ul id="ca185c55-74fe-4806-ac1a-cc4cce5bf8f6" class="bulleted-list"><li style="list-style-type:disc">The container abstraction makes your code very portable. It is cross platform and we can easily move it to many platforms without changing or rebuilding anything.</li></ul><ul id="c9bdb321-89b7-4ccf-93f0-b61b8eeac636" class="bulleted-list"><li style="list-style-type:disc">Kubernetes makes it easy to orchestrate many Containers on many hosts. Scale them, roll out new versions of them, and even roll back to the old version if things go wrong.</li></ul><ul id="a8a7f239-a072-4cd1-ae1a-096ed28b2fb5" class="bulleted-list"><li style="list-style-type:disc">To build a container in Kubernetes, we must first containerize the code first using docker, google cloud build or any other similar services and then publish it in a Container Registry service, such as the Google Container Registry and share or download it from there.</li></ul><ul id="3f1b2aea-2a08-4507-83e9-3314f61e3e44" class="bulleted-list"><li style="list-style-type:disc">Containers abstract away unimportant details of their environments. Deploying a containerized application consumes less resources and is less error-prone than deploying an application in virtual machines.</li></ul><ul id="bb01422c-f9e9-479b-aadc-240d724ef87b" class="bulleted-list"><li style="list-style-type:disc"><strong>Kubernetes</strong> is an <strong>open-source orchestrator</strong> for containers so you can better manage and scale your applications. Kubernetes offers an API that lets people authorized people, control its operation through several utilities.<figure id="5c0347c3-5e96-4b24-b693-4ac2572eecb5"><div class="source"><a href="https://youtu.be/Rl5M1CzgEH4">https://youtu.be/Rl5M1CzgEH4</a></div></figure></li></ul><ul id="06acdb8e-4a88-4003-a8eb-c1f97f7d9e57" class="bulleted-list"><li style="list-style-type:disc">GKE or Google Kubernetes Engine is a managed service in the cloud for running kubernetes which handles all the maintenance works and lets us create a cluster easily and provides some advanced cluster management features.</li></ul><figure id="753209dd-e461-48d9-86cc-1ba2dd470bca" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_220020.png"><img style="width:576px" src="Week%201%20d7bbc/Screenshot_2021-07-27_220020.png"/></a></figure><ul id="25c0d024-f792-4e93-9071-080fc299d0ed" class="bulleted-list"><li style="list-style-type:disc">The basic structure of a GKE cluster is as follows</li></ul><figure id="13a8d1bb-d60f-480a-bbf1-184107d61d9b" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_220129.png"><img style="width:624px" src="Week%201%20d7bbc/Screenshot_2021-07-27_220129.png"/></a></figure><ul id="ca443917-d8f7-4f19-ad8d-79424165d5be" class="bulleted-list"><li style="list-style-type:disc">A pod is the smallest deployable unit in Kubernetes. It&#x27;s common to have only one container per pod. But if you have multiple containers with a hard dependency, you can package them into a single pod. They&#x27;ll automatically share networking and they can have disk storage volumes in common. Each pod in Kubernetes gets a unique IP address and set of ports for your containers.<figure id="18736649-fbb1-4cd2-a936-2ae015f1d786" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_221132.png"><img style="width:432px" src="Week%201%20d7bbc/Screenshot_2021-07-27_221132.png"/></a></figure><p id="d8bf8c76-a410-4b4c-92a6-b3e12e90639c" class="">When we run the command expose using kubtil a service is created by GKE. A service groups a set of pods together and provides a stable endpoint for them. For Example, a public IP address managed by a network load balancer. </p></li></ul><ul id="82faa069-d3dc-4c62-ae84-6d0bdb06bc6a" class="bulleted-list"><li style="list-style-type:disc"><strong>Rolling updates</strong> are a quick way to push out a new version of your application while still sparing your users from experiencing downtime. When you choose a rolling update for a deployment and then give it a new version of the software that it manages, Kubernetes will create pods of the new version one-by-one, waiting for each new version pod to become available before destroying one of the old version pods.</li></ul><p id="ea9133eb-3970-4830-9059-90353056d0fd" class="">
+</p><h3 id="886e42e1-2dbf-4bbd-8298-8c132e059776" class="">Hybrid and Multi Cloud</h3><ul id="f9242439-daed-4e91-b42e-77dc6e9f2f4b" class="bulleted-list"><li style="list-style-type:disc"><strong>Anthos</strong> is a hybrid and multi-cloud solution powered by the latest innovations in distributed systems, and service management software from Google. </li></ul><ul id="57955205-1898-4741-8708-49c3f0102678" class="bulleted-list"><li style="list-style-type:disc">The Anthos framework rests on Kubernetes and Google Kubernetes engine deployed on-prem. Which provides the foundation for an architecture that is fully integrated with centralized management through a central control plane that supports policy based application lifecycle delivery across hybrid and multi-cloud environments. </li></ul><ul id="b46b3318-ab46-4dc3-a59d-c578dfd06b29" class="bulleted-list"><li style="list-style-type:disc">Anthos also provides a rich set of tools for monitoring and maintaining the consistency of your applications across all of your network, whether on-premises, in the Cloud, or in multiple clouds.</li></ul><hr id="13323457-7bd5-4758-afd1-8d47ee1b2ad4"/><h1 id="1725d162-1d33-4d0b-af4c-e538936e3c11" class=""><span style="border-bottom:0.05em solid">Introduction to App Engine</span></h1><p id="0ad7e0cd-cd4e-4a41-8106-88e5a23bb443" class="">
+</p><ul id="c9775759-942e-4359-be89-1cb7ddcd6271" class="bulleted-list"><li style="list-style-type:disc">The <strong>App Engine</strong> platform manages the hardware and networking infrastructure required to run your code. App Engine <strong>automatically provisions</strong> server instances and scales and <strong>load balances</strong> them. To deploy an application on App Engine, you just hand App Engine your code and the App Engine service takes care of the rest. </li></ul><ul id="604754be-ac9d-4966-b920-4cf35a041237" class="bulleted-list"><li style="list-style-type:disc">App Engine provides you with a built-in services that many web applications need. NoSQL databases, in-memory caching, load balancing, health checks, logging and a way to authenticate users.</li></ul><ul id="5df80449-71eb-46f8-a0e3-4b77d93ce70b" class="bulleted-list"><li style="list-style-type:disc">App Engine is especially suited for applications where the workload is highly variable or unpredictable like web applications and mobile backend.</li></ul><h3 id="67a62a10-332a-43a5-9eb1-600eb08163a7" class="">Google App Engine Standard Environment</h3><ul id="bbe3d1d2-cdfc-4641-acfc-c70d4d08366b" class="bulleted-list"><li style="list-style-type:disc">It offers a simpler deployment experience than the Flexible environment and fine-grained auto-scale. It also offers a free daily usage quota for the use of some services. </li></ul><ul id="a52ea78a-0a40-488e-bc49-b7d46cd25b38" class="bulleted-list"><li style="list-style-type:disc"><strong>Low utilization applications might be able to run at no charge.</strong></li></ul><ul id="9f5cc683-5dd5-47cb-88fa-54aad7992f09" class="bulleted-list"><li style="list-style-type:disc">App Engine Standard Environment provides runtimes for specific versions of Java, Python, PHP and Go. The runtimes also include libraries that support App Engine APIs.</li></ul><ul id="0ea34b17-5d25-4e9c-9b85-02fb32e5e9cd" class="bulleted-list"><li style="list-style-type:disc">The Standard Environment also enforces restrictions on your code by making it run in a so-called &quot;Sandbox.&quot; That&#x27;s a software construct that&#x27;s independent of the hardware, operating system, or physical location of the server it runs on. <figure id="d1e23dd1-2874-4b88-b5ea-8901150de78f" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_232754.png"><img style="width:384px" src="Week%201%20d7bbc/Screenshot_2021-07-27_232754.png"/></a></figure></li></ul><ul id="04a3eaee-b3aa-4d6b-bf2d-d4c1b3c7239d" class="bulleted-list"><li style="list-style-type:disc">The Sandbox is one of the reasons why App Engine Standard Environment can scale and manage your application in a very fine-grained way.</li></ul><h3 id="4364163e-87ee-44bd-b301-5dbd1a1cdc1e" class="">Google App Engine Flexible Environment</h3><ul id="b2131eb3-a8ec-4cee-be64-dbbb80a22ef7" class="bulleted-list"><li style="list-style-type:disc">If the restrictions of App Engine standard environment&#x27;s sandbox model don&#x27;t work for you, you can chose Flexible environment.</li></ul><ul id="6cbbf5e4-525a-4907-bec5-0865792cf86b" class="bulleted-list"><li style="list-style-type:disc">App Engine flexible environment lets you specify the container your App Engine runs in and the application runs inside Docker containers on Google Compute Engine Virtual Machines. They&#x27;re health checked, healed as necessary, and you get to choose which geographical region they run in, and critical backward-compatible updates to their operating systems are automatically applied.</li></ul><figure id="55f3fe2b-2f07-4ab4-a5d9-62c09caead17" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_233509.png"><img style="width:672px" src="Week%201%20d7bbc/Screenshot_2021-07-27_233509.png"/></a></figure><p id="821ef616-1836-4eb8-9eda-e533a6a9766d" class="">
+</p><ul id="b21295d7-c5bf-4d3f-91dc-a575844a18b3" class="bulleted-list"><li style="list-style-type:disc">App Engine standard environment is for people who want the service to take maximum control of their application&#x27;s deployment and scaling. Kubernetes Engine gives the application owner the full flexibility of Kubernetes. App Engine flexible edition is somewhere in between.</li></ul><figure id="ecd5744e-6e62-4072-b1e5-b88daf50541f" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_233641.png"><img style="width:672px" src="Week%201%20d7bbc/Screenshot_2021-07-27_233641.png"/></a></figure><p id="8ba99906-d849-48b0-acc4-2403e36b9f25" class="">
+</p><h2 id="fca28c96-cb42-4786-b3f5-d9a3fc95ba9e" class="">Google Cloud Endpoints and Apigee Edge</h2><ul id="bb3a84dc-6cd4-41b4-add7-b920766c17d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Cloud endpoints</strong> and <strong>Apigee Edge</strong> are API management services in google cloud. They approach related problems in a different way and each has a particular strength.</li></ul><ul id="092c9134-7842-47b5-a76e-171624aa5dda" class="bulleted-list"><li style="list-style-type:disc"><strong>Cloud endpoints</strong> is used in situations, to monitor the clients that are using the api and when we need an easy way to monitor and log its use and it provides and easy to manage interface.
+Supported platforms:<figure id="8449c47b-89ba-4155-a19d-58aec9acfd86" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-27_234758.png"><img style="width:748px" src="Week%201%20d7bbc/Screenshot_2021-07-27_234758.png"/></a></figure></li></ul><ul id="100b2143-aa62-475b-9830-4e162267bc30" class="bulleted-list"><li style="list-style-type:disc">Apigee Edge is also a platform for developing and managing API proxies. It has a different orientation though. It has a focus on business problems like rate limiting, quotas, and analytics. </li></ul><p id="c2d0dd7f-9941-4780-a5ba-af94e775ef84" class="">
+</p><h2 id="ac14b7ef-893f-4f14-8ed9-4b1820d1a885" class="">Development in the cloud</h2><ul id="69033fb9-5c9b-437e-afd7-2275ddf4a1fd" class="bulleted-list"><li style="list-style-type:disc"><strong>Cloud Source Repositories</strong> are fully featured, <strong>private Git repositories</strong> hosted on Google Cloud.</li></ul><ul id="6882bdca-a99f-415e-ab08-d9ccf42c6a5d" class="bulleted-list"><li style="list-style-type:disc">Cloud Source Repositories provides Git version control to support your team&#x27;s development of any application or service, including those that run on App Engine, Compute Engine, and Kubernetes Engine. With Cloud Source Repositories, you can have any number of private Git repositories, which allows you to organize the code associated with your cloud project in whatever way works best for you.</li></ul><h3 id="40fd1261-e3e7-470b-bd9a-898f97088bae" class="">Cloud Functions</h3><ul id="f5023720-bd4d-451e-8bd0-a5ed13cfa35e" class="bulleted-list"><li style="list-style-type:disc">Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your function is triggered when an event being watched is fired.</li></ul><ul id="1590e33d-4ad3-4cb7-9434-da015eb4382a" class="bulleted-list"><li style="list-style-type:disc">Cloud Functions can trigger on events in Cloud Storage, Cloud Pub/Sub, or in HTTP call.</li></ul><h2 id="c1baa77b-2bbd-4c53-972a-7f3a91c3d509" class="">Deployment: Infrastructure as code</h2><ul id="88697b70-8536-41c2-a8c8-e87c53a83043" class="bulleted-list"><li style="list-style-type:disc">GCP Deployment Manager is an Infrastructure Management Service that automates the creation and management of your Google Cloud Platform resources for you. </li></ul><ul id="9d39fb90-7bde-4288-8277-ec9a4e579d92" class="bulleted-list"><li style="list-style-type:disc">To use it, you create a template file using either the YAML markup language or Python that describes what you want the components of your environment to look like.</li></ul><ul id="94e49f2e-58f9-4747-9442-4f8127b917a2" class="bulleted-list"><li style="list-style-type:disc">You can store and version control your Deployment Manager templates in Cloud Source repositories.</li></ul><h2 id="31a38b70-d325-4bf9-9cbe-96b26f06f5e4" class="">Monitoring: Proactive instrumentation</h2><ul id="d4927e8d-b15d-4788-ad42-5c73026bf8e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Stackdriver</strong> is GCP&#x27;s tool for monitoring, logging and diagnostics. </li></ul><ul id="71fab2fd-2ec7-4902-8a4d-e5fceb08c66c" class="bulleted-list"><li style="list-style-type:disc">Stackdriver gives you access to many different kinds of signals from your infrastructure platforms, virtual machines, containers, middleware and application tier, logs, metrics and traces. It gives you insight into your application&#x27;s health, performance and availability.</li></ul><ul id="fb83f92c-45d3-474f-888a-3844fd42e86d" class="bulleted-list"><li style="list-style-type:disc">Core Components of Stackdriver<figure id="2dab1ed5-1369-425c-9d48-66bc9f443d85" class="image"><a href="Week%201%20d7bbc/Screenshot_2021-07-28_203440.png"><img style="width:528px" src="Week%201%20d7bbc/Screenshot_2021-07-28_203440.png"/></a></figure></li></ul><ul id="392322d8-fbe6-4d74-8194-92654a867a91" class="bulleted-list"><li style="list-style-type:disc">You can also export logs to BigQuery, Cloud Storage and Cloud PubSub.</li></ul><ul id="0fa99d75-09a5-4e6e-a256-d6031ecde3c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Stackdriver Error Reporting</strong> tracks and groups the errors in your cloud applications. And it notifies you when new errors are detected.</li></ul><ul id="aed818ba-4a7a-4821-b251-4c672ef603aa" class="bulleted-list"><li style="list-style-type:disc"><strong>Stackdriver Trace</strong>, you can sample the latency of app engine applications and report Per-URL statistics.</li></ul><ul id="4b46bf80-899f-476f-a2d2-902878cb992d" class="bulleted-list"><li style="list-style-type:disc"><strong>Stackdriver Debugger</strong> offers a different way. It connects your applications production data to your source code. So you can inspect the state of your application at any code location in production.</li></ul><hr id="42000751-9168-4f7b-8a3b-6c73933f5221"/><h1 id="50e0b81a-1517-4f4d-b7f6-ebb69c2500c2" class=""><span style="border-bottom:0.05em solid">Introduction to Big Data and Machine Learning</span></h1><h2 id="dad295b4-98d4-452a-9f7f-76e151c10080" class="">Google Cloud Big Data Platform</h2><ul id="e73b636b-add7-4661-a619-2b0a6ef5a724" class="bulleted-list"><li style="list-style-type:disc">Google Cloud Big Data Solutions are designed to help you transform your business and user experiences with meaningful data insights.</li></ul><ul id="a0629757-20bd-46cd-ac50-652f964266b6" class="bulleted-list"><li style="list-style-type:disc">Google Cloud&#x27;s big data services are fully managed and scalable</li></ul><figure id="920bd105-8143-41b6-ac43-61da19b3ecc6" class="image"><a href="Week%201%20d7bbc/Untitled%203.png"><img style="width:624px" src="Week%201%20d7bbc/Untitled%203.png"/></a></figure><h3 id="475c9c05-4a55-4796-aa61-7a98c0971dea" class="">Cloud Dataproc</h3><ul id="501b83ef-0068-45a6-9a9c-4cb449c59e58" class="bulleted-list"><li style="list-style-type:disc">Cloud dataproc is managed hadoop. It is a fast and easy way to run hadoop and can scale clusters up and down even when jobs are running<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="55f2c4e3-bc08-4008-94f4-cddf281e820a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Apache Hadoop is a collection of open-source software utilities that facilitates using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03b5afc8-bad2-45bd-a16c-d02a11d5d2fd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">It is based on the MapReduce programming model which Google invented and published. The MapReduce model is, at its simplest, means that one function, traditionally called the &quot;Map function,&quot; runs in parallel with a massive dataset to produce intermediate results. And another function, traditionally called the &quot;Reduce function,&quot; builds a final result set based on all those intermediate results.</div></figure></li></ul><ul id="e31f29b6-162f-40ef-b3de-1bffcf9dd002" class="bulleted-list"><li style="list-style-type:disc">Cloud Dataproc is a fast, easy, managed way to run Hadoop, Spark, Hive, and Pig on Google Cloud Platform. All you have to do is request a Hadoop cluster. It will be built for you in 90 seconds or less, on top of Compute Engine virtual machines whose number and type you control.</li></ul><ul id="e93f4186-6c82-41cf-852d-cdb174608536" class="bulleted-list"><li style="list-style-type:disc">Although the rate for pricing is based on the hour, Cloud Dataproc is billed by the second. Our Cloud Dataproc clusters are billed in one-second clock-time increments, subject to a one minute minimum billing.</li></ul><ul id="ac4b006e-e6e6-431f-b6da-43f020a94aeb" class="bulleted-list"><li style="list-style-type:disc">Cloud Dataproc can also run on preemptible Compute Engine instances for batch processing.</li></ul><ul id="76555d75-b2c3-4520-a98d-27ff429ad528" class="bulleted-list"><li style="list-style-type:disc">Once your data is in a cluster, you can use Spark and Spark SQL to do data mining. And you can use MLib, which is Apache Spark&#x27;s machine learning libraries to discover patterns through machine learning.</li></ul><h3 id="e10ea5b4-f434-42d4-b903-3567d45a1cb3" class="">Cloud Dataflow</h3><ul id="0553ebc0-5046-4b38-9e22-cfb2ab4a5ae8" class="bulleted-list"><li style="list-style-type:disc">Cloud dataflow is used when your data is of unpredictable size or shows at up real time. It offers managed data pipelines. It stores the final result in cloud storage.</li></ul><ul id="e73842c0-150e-48dd-923b-5d29f07d870d" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s both a unified programming model and a managed service and it lets you develop and execute a big range of data processing patterns: extract, transform, and load batch computation and continuous computation.</li></ul><ul id="efea4cd0-227b-419f-bb21-c06cb37d701b" class="bulleted-list"><li style="list-style-type:disc">Cloud Dataflow fully automates the management of whatever processing resources are required. Cloud Dataflow frees you from operational tasks like resource management and performance optimization.</li></ul><ul id="f29e9d28-71f1-4558-b2cb-0e23d2935fba" class="bulleted-list"><li style="list-style-type:disc">its use case as a data analysis engine comes in handy in things like fraud detection and financial services, IoT analytics and manufacturing, healthcare and logistics and click stream, point of sale and segmentation analysis in retail. It can also be used in real time applications such as personalizing gaming user experiences.</li></ul><h3 id="e49df79a-77e6-47ac-bebb-7f56571413b7" class="">BigQuery</h3><ul id="16233056-7e80-4487-90b2-cf45e7cdfc8d" class="bulleted-list"><li style="list-style-type:disc">BigQuery is a fully managed data warehouse which provides near real time interactive analysis of massive datasets (Hundreds of TBs) using SQL syntax.</li></ul><ul id="bdd73cfa-0fec-486d-9806-f1e48e273f5e" class="bulleted-list"><li style="list-style-type:disc">It operates on pay as you go model for pricing. </li></ul><ul id="33e34af6-b9df-4ac6-9903-d464709734f2" class="bulleted-list"><li style="list-style-type:disc">You can load the data from cloud storage or cloud data store, or stream it into BigQuery at up to 100,000 rows per second.</li></ul><ul id="c455d904-847c-467a-aa22-7d3c0e4402fe" class="bulleted-list"><li style="list-style-type:disc">You can easily read and write data in BigQuery via Cloud Dataflow, Hadoop, and Spark.</li></ul><ul id="77839170-e651-4f4f-bef5-4e5f6408c5d3" class="bulleted-list"><li style="list-style-type:disc">It also provides free monthly quotas and it&#x27;s and BigQuery lets you specify the region where your data will be kept.</li></ul><ul id="50c84a59-7a8d-4a08-a77f-b944b61e70ce" class="bulleted-list"><li style="list-style-type:disc">BigQuery separates storage and computation, you pay for your data storage separately from queries. That means, you pay for queries only when they are actually running and When the age of your data reaches 90 days in BigQuery, Google will automatically drop the price of storage.</li></ul><h3 id="3e3fe89b-f5dc-4cc9-ab22-a5c0f9377aa3" class="">Cloud Pub/Sub and Cloud Datalab</h3><p id="2fbafaa0-d971-43a2-8b94-c813741a1276" class="">
+</p><p id="45f76a1f-a9b7-4b11-b717-c8ce251a1b11" class=""><strong>Cloud Pub/Sub</strong></p><ul id="cf14d5b6-81c3-40f4-9a67-dc0fc23c5b33" class="bulleted-list"><li style="list-style-type:disc">Cloud Pub/Sub is a messaging service for applications and services. You can use it to let independent applications you build send and receive messages.</li></ul><ul id="eefb1d86-3181-4926-a4dd-8ac39138e05a" class="bulleted-list"><li style="list-style-type:disc">The Pub in Pub/Sub is short for <strong>publishers</strong> and Sub is short for <strong>subscribers</strong>. Applications can publish messages in Pub/Sub and one or more subscribers receive them.</li></ul><ul id="5c79b63a-8846-4899-a0f0-ac04c3861f3f" class="bulleted-list"><li style="list-style-type:disc">Receiving messages in cloud pub/sub doesn&#x27;t have to be synchronous. There is a small chance some messages might be delivered more than once.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cf0b1e2a-dd46-4ea5-93a8-dbdb10e11fbd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Synchronous : Existing or occurring at the same time.</div></figure></li></ul><p id="34892a9e-082e-4762-a9c2-9a3e87a1d444" class="">
+</p><p id="d618eafd-8f77-4c48-8065-0509d53455d0" class=""><strong>Cloud Datalab</strong></p><ul id="81736ca4-1f61-46a0-a983-b03ffb2755c2" class="bulleted-list"><li style="list-style-type:disc">Cloud datalab offers interactive data exploration.</li></ul><ul id="11361ee4-5c1e-4681-af19-6bf6050cbf6c" class="bulleted-list"><li style="list-style-type:disc">Project Jupyter lets you create and maintain web-based notebooks containing Python code and you can run that code interactively and view the results. And Cloud Datalab takes the management work out of this natural technique.</li></ul><ul id="347ab48c-cb45-4742-9fd2-0a3bca29b179" class="bulleted-list"><li style="list-style-type:disc">There is no additional charge for Datalab itself. It&#x27;s integrated with BigQuery, Compute Engine, and Cloud Storage, so accessing your data doesn&#x27;t run into authentication hassles.</li></ul><p id="e90eb9db-0817-4f52-b74a-3f7aaf43ab6b" class="">
+</p><h2 id="9e416d1d-8b55-4b5e-8cb0-584b7a103a6e" class="">Google Cloud Machine Learning Platform</h2><ul id="59d59045-d679-4ac2-83a6-6e6b7a1942da" class="bulleted-list"><li style="list-style-type:disc">Machine learning is one branch of the field of artificial intelligence. It&#x27;s a way of solving problems without explicitly coding the solution. Instead, human coders build systems that improve themselves over time through repeated exposure to sample data, which we call training data.<figure id="338a7ae9-3963-4b24-91ab-709bc04cbf0b" class="image"><a href="Week%201%20d7bbc/Untitled%204.png"><img style="width:828px" src="Week%201%20d7bbc/Untitled%204.png"/></a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="69623e26-8caa-4c1f-b7c8-71a1c6ed7eca"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Tensor Flow is a free and open-source software library for machine learning.</div></figure></li></ul><ul id="84397d92-660b-4de3-bed7-9f7e5b3c77d4" class="bulleted-list"><li style="list-style-type:disc">People use the Cloud Machine Learning Platform for lots of applications. Generally, they fall into two categories, depending on whether the data they work on is structured or unstructured.</li></ul><ul id="cadb8cb8-52b6-45e2-8999-1fcf3ae468d8" class="bulleted-list"><li style="list-style-type:disc">Based on structured data, you can use ML for various kinds of classification and regression tasks like customer churn analysis, product diagnostics and forecasting. It can be the heart of a recommendation engine for content personalization and cross-sells and up-sells. You can use ML to detect anomalies, as in fraud detection, sensor diagnostics or log metrics.</li></ul><ul id="a41b8d9b-5c07-4ad4-92ff-177180df3792" class="bulleted-list"><li style="list-style-type:disc">Based on unstructured data, you can use ML for image analytics such as identifying damaged shipment, identifying styles and flagging content. You can do text analytics too, like a call center, blog analysis, language identification, topic classification and sentiment analysis.</li></ul><figure id="e61a41b1-fb1e-441c-8b0e-c0b074e73f42" class="image"><a href="Week%201%20d7bbc/Untitled%205.png"><img style="width:807px" src="Week%201%20d7bbc/Untitled%205.png"/></a></figure><h3 id="6cbe9895-ab77-4755-8fd9-5a1fa0fa017d" class="">Machine learning API</h3><p id="2c8f9e2f-89d4-4781-8dc1-a24e355cabc7" class="">API for machine learning can be defined as a remote tool utilizing ML to solve a specific problem within a specific project.</p><h3 id="d47ccbe6-1afb-44a6-960f-017e71518b0f" class="">1. Cloud Vision API</h3><ul id="2b9bd08a-f638-473f-93d7-158b6857c750" class="bulleted-list"><li style="list-style-type:disc">The Cloud Vision API enables developers to understand the content of an image. It quickly classifies images into thousands of categories and detects individual objects within images, and finds and reads printed words contained within images.</li></ul><h3 id="079c6653-9ad9-46d4-80fb-41f0bdcb4686" class="">2. Cloud Speech API </h3><ul id="ab36828b-19e2-4446-90b7-13b43356c097" class="bulleted-list"><li style="list-style-type:disc">The Cloud Speech API enables developers to convert audio to text. The API recognizes over 80 languages and variants. You can transcribe the text of users, dictating in an applications&#x27; microphone, enable command and control through voice or transcribe audio files.</li></ul><h3 id="21d92c59-e739-4547-83ea-fd28af6f2ff5" class="">3. Cloud Natural Language API</h3><ul id="2dd10034-99e7-4fbe-8198-c46c7f0b9245" class="bulleted-list"><li style="list-style-type:disc">The Cloud Natural Language API offers a variety of natural language understanding technologies to developers. </li></ul><ul id="054750db-7b66-44cd-b2fa-3562ce9f5024" class="bulleted-list"><li style="list-style-type:disc">It can do syntax analysis, breaking down sentences supplied by our users into tokens, identify the nouns, verbs, adjectives, and other parts of speech and figure out the relationships among the words.</li></ul><ul id="3ae1c7f3-61ae-43da-be4f-1b69084f379c" class="bulleted-list"><li style="list-style-type:disc">It can also parse text and flag mentions of people, organizations, locations, events, products, and media. It can understand the overall sentiment expressed in a block of text.</li></ul><h3 id="3aa988d0-b434-4f63-9356-e15e44653992" class="">4. Cloud Translation API</h3><ul id="5c606a60-bbf7-416f-8e81-725a77c087e6" class="bulleted-list"><li style="list-style-type:disc">Cloud Translation API provides a simple, programmatic interface for translating an arbitrary string into a supported language. When you don&#x27;t know the source language, the API can detect it.</li></ul><h3 id="9d572498-0c8e-489e-9f12-f6d4d930c853" class="">5. Cloud Video Intelligence API</h3><ul id="eba86281-e011-4611-80db-9eedcba1c1b5" class="bulleted-list"><li style="list-style-type:disc">The Cloud Video Intelligence API lets you annotate videos in a variety of formats. It helps you identify key entities - that is, nouns - within your video and when they occur. You can use it to make video content searchable and discoverable.</li></ul><p id="a0c49066-c37a-4c15-854d-7591be8543c7" class="">
+</p><h1 id="d59227a8-9696-4f4e-bae6-01911b5a657a" class=""><span style="border-bottom:0.05em solid">Summary</span></h1><p id="a0177017-423f-4294-872e-e14377154df1" class="">
+</p><h2 id="9ab832b2-3fb2-4656-839e-461923cac003" class="">Compute Options</h2><figure id="b6babc2a-51bc-4f9a-bccd-406684939e98" class="image"><a href="Week%201%20d7bbc/Untitled%206.png"><img style="width:857px" src="Week%201%20d7bbc/Untitled%206.png"/></a></figure><ul id="417c6b04-36e0-4e2a-9da6-68397ac206b5" class="bulleted-list"><li style="list-style-type:disc">Choose Compute Engine if you want to deploy your application in virtual machines that run on Google&#x27;s infrastructure.</li></ul><ul id="588080ba-dc08-420b-90a0-7c195ac7602e" class="bulleted-list"><li style="list-style-type:disc">Choose Kubernetes Engine if you want instead to deploy your application in containers that run on Google&#x27;s infrastructure.</li></ul><ul id="154a8c41-4a02-4174-88f6-8e9f224b9ef9" class="bulleted-list"><li style="list-style-type:disc">Choose App Engine instead if you just want to focus on your code, leaving most infrastructure and provisioning to Google. <ul id="3423f1ed-5a6c-4181-92b7-fbdf08ca5a56" class="bulleted-list"><li style="list-style-type:circle">App Engine flexible environment lets you use any runtime you want, and gives you full control of the environment in which your application runs. </li></ul><ul id="c8dfe859-ae64-4962-a548-7d942a3a6890" class="bulleted-list"><li style="list-style-type:circle">App Engine standard environment lets you choose from a set of standard runtimes and offers finer-grained scaling and scaled to zero.</li></ul></li></ul><ul id="03b3066c-6db2-4451-82d1-5586fc70314c" class="bulleted-list"><li style="list-style-type:disc">To completely relieve yourself from the chore of managing infrastructure, build or extend your application using Cloud Functions. You supply chunks of code for business logic, and your code get spun up on demand in response to events.</li></ul><h2 id="576e493b-126f-45a4-821d-dc7441031ac4" class="">Load Balancing</h2><figure id="16fa2e52-f6d8-4105-8693-389653697793" class="image"><a href="Week%201%20d7bbc/Untitled%207.png"><img style="width:823px" src="Week%201%20d7bbc/Untitled%207.png"/></a></figure><ul id="1922a36a-de4c-44e4-805f-17dfe2ed7f2d" class="bulleted-list"><li style="list-style-type:disc">Use Global HTTP(S) load balancing to put your Web application behind a single anycast IP to the entire Internet.<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="49b94496-3961-4b56-a3b2-c69a5bb1be45"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">In anycast, a collection of servers share the same IP address and send data from a source computer to the server that is topographically the closest. ... The main principle of anycast is that an IP address range is advertised in the BGP messages of multiple routers.</div></figure><p id="83f66e95-fce6-417f-a454-4b04ee8c2b4c" class="">It load balances traffic among all your backend instances in regions around the world. And it&#x27;s integrated with GCP&#x27;s Content Delivery Network.</p></li></ul><ul id="c5e45b14-f697-4595-bcfc-72d2d755d8e7" class="bulleted-list"><li style="list-style-type:disc">If your traffic isn&#x27;t HTTP or HTTPS, you can use the global TCP or SSL Proxy for traffic on many ports.</li></ul><ul id="4cba48b0-66d0-4c42-b0ac-e1c34f333931" class="bulleted-list"><li style="list-style-type:disc">For other ports or for UDP traffic, use the regional load balancer.</li></ul><ul id="b4b6ff83-4e3b-4495-bc41-dc0d56369838" class="bulleted-list"><li style="list-style-type:disc">To load balance the internal tiers of a multi-tier application, use the internal load balancer.</li></ul><h2 id="24098619-8968-4c4b-85c8-92cf7e18a484" class="">Interconnect with google VPC</h2><figure id="3e5d79ea-a471-4068-862e-c0737478c427" class="image"><a href="Week%201%20d7bbc/Untitled%208.png"><img style="width:815px" src="Week%201%20d7bbc/Untitled%208.png"/></a></figure><ul id="07b783e7-d344-471e-a833-35f5b48e768a" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s simple to set up a VPN and you can use Cloud Router to make it dynamic.</li></ul><ul id="9a03aac0-e55e-4a9f-b2e7-c7513f252bf9" class="bulleted-list"><li style="list-style-type:disc">You can also peer with Google, at its many worldwide points of presence either directly or through a carrier partner.</li></ul><ul id="13fcc663-78c3-4e58-b821-9b06166de3fc" class="bulleted-list"><li style="list-style-type:disc">If you need a service level agreement and can adopt one of the required network typologies, use Dedicated Interconnect.</li></ul><p id="b0e38112-afed-4284-876e-2bedd97d32be" class="">
+</p><h2 id="8913a3f1-699d-4dc3-a3fe-704d4fa2ceff" class="">Storage Options</h2><figure id="3201d0b9-1c12-4bc3-a420-3255e506e5e1" class="image"><a href="Week%201%20d7bbc/Untitled%209.png"><img style="width:813px" src="Week%201%20d7bbc/Untitled%209.png"/></a></figure><ul id="44a372de-1f9e-4c37-a30a-7cd5cb235587" class="bulleted-list"><li style="list-style-type:disc">Consider using Cloud Datastore if you need to store structured objects, or if you require support for transactions and SQL-like queries.</li></ul><ul id="03f15558-b035-4cb5-8942-6f91bfc5b70a" class="bulleted-list"><li style="list-style-type:disc">Consider using Cloud Bigtable if you need to store a large amount of single-keyed data, especially structured objects.</li></ul><ul id="fec1a61c-6c3e-498b-b95a-c091fe50db34" class="bulleted-list"><li style="list-style-type:disc">Consider using Cloud Storage if you need to store immutable binary objects.</li></ul><ul id="01ee3c8b-f44a-4b7e-a5a8-c4133b6bacac" class="bulleted-list"><li style="list-style-type:disc">Consider using Cloud SQL or Cloud Spanner if you need full SQL support for an online transaction processing system.<ul id="2ddba83f-0915-4307-bcc4-297a54dd7ed6" class="bulleted-list"><li style="list-style-type:circle">Cloud SQL provides terabytes of capacity while Cloud Spanner provides petabytes and horizontal scalability.</li></ul></li></ul><ul id="9a1996c5-a44a-45ee-a858-c87e3fcf264f" class="bulleted-list"><li style="list-style-type:disc">Consider BigQuery if you need interactive querying in an online analytical processing system with petabytes of scale.</li></ul><h2 id="59188023-cdbc-4a37-b6fb-915462ab3c64" class="">Cloud Storage</h2><figure id="926c92bc-e6cb-4d2a-b86a-08ab06a0f68c" class="image"><a href="Week%201%20d7bbc/Untitled%2010.png"><img style="width:817px" src="Week%201%20d7bbc/Untitled%2010.png"/></a></figure><ul id="18a46ccb-4299-4c64-ace8-22a96c9a6de2" class="bulleted-list"><li style="list-style-type:disc">Multi-regional and regional are the classes for warm and hot data.</li></ul><ul id="ff13497d-4697-4ca0-ab48-55a6ad61efba" class="bulleted-list"><li style="list-style-type:disc">Use Multi-regional especially for content that&#x27;s being served to a global Web audience.</li></ul><ul id="b84bed19-ede5-41df-9cc0-75da50ea012d" class="bulleted-list"><li style="list-style-type:disc">Use Regional for working storage for compute operations.</li></ul><ul id="dfc86853-3f41-481c-9b70-47b2c83fa888" class="bulleted-list"><li style="list-style-type:disc">Nearline and Coldline are the classes for, cooler data. Use Nearline for backups and for infrequently accessed content. And use Coldline for archiving and disaster recovery.</li></ul></div></article></body></html>
